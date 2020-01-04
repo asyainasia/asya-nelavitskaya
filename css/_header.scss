@@ -1,0 +1,54 @@
+.header {
+    @include flexCenter(row, space-around);
+    
+	position: fixed;
+	background-color: transparent;
+    height: 80px;
+    width: 100%;
+}
+.header__label {
+    @include flexCenter(row, center);
+
+	position: fixed;
+	top: 0;
+	left: 10%;
+	background-color: $cursorColor;
+	color: $white;
+	filter: alpha(Opacity=20);
+    opacity: 0.2;
+    width: 80px;
+    height: 40px;
+    margin-top: 20px;
+    transform: rotate(-90deg);
+}
+.header__navigation {
+    @include flexCenter(row, flex-end);
+    
+	list-style: none;
+	width: 100vw;
+}
+.option a {
+    position: relative;
+	text-decoration: none;
+	color: $black;
+    cursor: pointer;
+	&:after {
+		display: block;
+        position: absolute;
+        left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+        width: 0;/*задаём длинну линии до наведения курсора*/
+        height: 2px; /*задаём ширину линии*/
+        background-color: $black; /*задаём цвет линии*/
+        content: "";
+        transition: width 0.3s ease-out; /*задаём время анимации*/
+    }
+    &:hover:after,
+    &:focus:after {
+        width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+    }
+}
+.option {
+	display: inline-block;
+	white-space: nowrap; /*запретить перенос строки внутри пунктов меню*/
+	padding-right: 100px;
+}

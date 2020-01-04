@@ -1,0 +1,137 @@
+.block {
+    @include flexCenter(row, center);
+
+    background-color: $white;
+    color: $textColor;
+    font-family: $monserrat;
+    font-size: 17px;
+    margin: 0;
+    padding: 0 200px;
+}
+.block__half {
+    width: 50%;
+    marquee {
+        width: 90px;
+    }
+}
+.block__half__text { 
+    padding: 50px 0;
+    line-height: 30px;
+    a { 
+        color: $textColor;
+        cursor: pointer;
+    }
+    strong {
+        color: $black;
+    }
+}
+.block__half__title{
+    @extend .block__half__text;
+    @include flexCenter(row, center);
+    text-transform: uppercase;
+    color: $black;
+    font-family: $raleway;
+    font-size: 15px;
+    font-weight: normal;
+}
+.block__half_left {
+    @include flexCenter(column, flex-end)
+    
+    padding-right: 30px;
+    margin-left: -3px;
+}
+.block__half_right {
+    @include flexCenter(column, flex-start)
+
+    padding-left: 30px;
+    margin-right: -3px;
+    border-width: 1px;
+    border-style: solid;
+    border-image: 
+        linear-gradient(
+        to top, 
+        $red, 
+       $white
+        ) 1 100%;
+    border-right: none !important;
+}
+.block__half__line-right {
+    width: 100%;
+    margin-left: -30px;
+    border: none; /* Убираем границу */
+    background: linear-gradient(to right, $red, $white); /* Цвет линии */
+    color: $red; /* Цвет линии для IE6-7 */
+    height: 1px; /* Толщина линии */
+}
+.block__half__line-left {
+    @extend .block__half__line-right;
+    background: linear-gradient(to left, $red, $white);
+    margin-right: -60px;
+    margin-left: 0;
+}
+.block__half-2 {
+    @extend .block__half;
+}
+.block__half_left-2 {
+    @extend .block__half_left;
+    border-right: 1px solid $red;
+}
+.block__half-2_right {
+    @extend .block__half_right;
+
+    justify-content: flex-start;
+    border: none;
+}
+#empty {
+    height: 500px;
+}
+#empty2 {
+    height: 200px;
+}
+.block-3 {
+    .block__half_right {
+        height: 170px;
+        border-image: 
+       linear-gradient(
+            to top, 
+            $red, 
+            $red
+        ) 1 100%;
+    }
+    span {
+        padding: 0;
+    }
+}
+// .block-gradient {
+//     background-image: linear-gradient($white, $backgroundDark);
+   
+//     hr {
+//         background: linear-gradient(to left, $red, $backgroundDark);
+//     } 
+//     .block__half_right {
+//         height: 170px;
+//         border-image: 
+//         linear-gradient(
+//         to top, 
+//         $red, 
+//        $red
+//         ) 1 100%;
+//     }
+//     span {
+//         padding: 0;
+//         // &:after {
+//         //     display: block;
+//         //     position: relative;
+//         //     left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+//         //     width: 0;/*задаём длинну линии до наведения курсора*/
+//         //     height: 1px; /*задаём ширину линии*/
+//         //     background-color: #fff; /*задаём цвет линии*/
+//         //     content: "";
+//         //     transition: width 0.3s ease-out; /*задаём время анимации*/
+//         // }
+//         // &:hover:after,
+//         // &:focus:after {
+//         //     width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+//         // }
+//     } 
+// }

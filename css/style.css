@@ -1,0 +1,564 @@
+@charset "UTF-8";
+/* #FAFAFA #FEFDFB */
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: fixed;
+  background-color: transparent;
+  height: 80px;
+  width: 100%;
+}
+
+.header__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: fixed;
+  top: 0;
+  left: 10%;
+  background-color: #f15c5c;
+  color: #F8f8f8;
+  filter: alpha(Opacity=20);
+  opacity: 0.2;
+  width: 80px;
+  height: 40px;
+  margin-top: 20px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.header__navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+  width: 100vw;
+}
+
+.option a {
+  position: relative;
+  text-decoration: none;
+  color: #151515;
+  cursor: pointer;
+}
+
+.option a:after {
+  display: block;
+  position: absolute;
+  left: 0;
+  /*изменить на right:0;, чтобы изменить направление подчёркивания */
+  width: 0;
+  /*задаём длинну линии до наведения курсора*/
+  height: 2px;
+  /*задаём ширину линии*/
+  background-color: #151515;
+  /*задаём цвет линии*/
+  content: "";
+  -webkit-transition: width 0.3s ease-out;
+  transition: width 0.3s ease-out;
+  /*задаём время анимации*/
+}
+
+.option a:hover:after, .option a:focus:after {
+  width: 100%;
+  /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
+
+.option {
+  display: inline-block;
+  white-space: nowrap;
+  /*запретить перенос строки внутри пунктов меню*/
+  padding-right: 100px;
+}
+
+.block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #F8f8f8;
+  color: #747272;
+  font-family: "Montserrat", sans-serif;
+  font-size: 17px;
+  margin: 0;
+  padding: 0 200px;
+}
+
+.block__half, .block__half-2 {
+  width: 50%;
+}
+
+.block__half marquee, .block__half-2 marquee {
+  width: 90px;
+}
+
+.block__half__text, .block__half__title {
+  padding: 50px 0;
+  line-height: 30px;
+}
+
+.block__half__text a, .block__half__title a {
+  color: #747272;
+  cursor: pointer;
+}
+
+.block__half__text strong, .block__half__title strong {
+  color: #151515;
+}
+
+.block__half__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-transform: uppercase;
+  color: #151515;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.block__half_left, .block__half_left-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-right: 30px;
+  margin-left: -3px;
+}
+
+.block__half_right, .block__half-2_right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: 30px;
+  margin-right: -3px;
+  border-width: 1px;
+  border-style: solid;
+  -o-border-image: linear-gradient(to top, red, #F8f8f8) 1 100%;
+     border-image: -webkit-gradient(linear, left bottom, left top, from(red), to(#F8f8f8)) 1 100%;
+     border-image: linear-gradient(to top, red, #F8f8f8) 1 100%;
+  border-right: none;
+}
+
+.block__half__line-right, .block__half__line-left {
+  width: 100%;
+  margin-left: -30px;
+  border: none;
+  /* Убираем границу */
+  background: -webkit-gradient(linear, left top, right top, from(red), to(#F8f8f8));
+  background: linear-gradient(to right, red, #F8f8f8);
+  /* Цвет линии */
+  color: red;
+  /* Цвет линии для IE6-7 */
+  height: 1px;
+  /* Толщина линии */
+}
+
+.block__half__line-left {
+  background: -webkit-gradient(linear, right top, left top, from(red), to(#F8f8f8));
+  background: linear-gradient(to left, red, #F8f8f8);
+  margin-right: -60px;
+  margin-left: 0;
+}
+
+.block__half_left-2 {
+  border-right: 1px solid red;
+}
+
+.block__half-2_right {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  border: none;
+}
+
+#empty {
+  height: 500px;
+}
+
+#empty2 {
+  height: 200px;
+}
+
+.block-3 .block__half_right, .block-3 .block__half-2_right {
+  height: 170px;
+  -o-border-image: linear-gradient(to top, red, red) 1 100%;
+     border-image: -webkit-gradient(linear, left bottom, left top, from(red), to(red)) 1 100%;
+     border-image: linear-gradient(to top, red, red) 1 100%;
+}
+
+.block-3 span {
+  padding: 0;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 30px;
+  background-color: #151515;
+  color: #F8f8f8;
+  font-size: 11px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer a {
+  color: #F8f8f8;
+}
+
+.footer__icon-wrapper__icon {
+  padding: 10px;
+  height: 20px;
+  -webkit-filter: invert(100);
+          filter: invert(100);
+  cursor: pointer;
+}
+
+.footer__icon-wrapper__icon:hover {
+  height: 25px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+#cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #f15c5c;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  background-color: #F8f8f8;
+}
+
+/* .main__particles {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(file:///Users/buyer/Desktop/my-page/img/particles-1.png); /* можно добавит no-repeat 
+	filter: alpha(Opacity=20);
+    opacity: 0.2;
+}
+.main__particles.particles1 {
+	animation: animate 11s linear infinite;
+}
+.main__particles.particles2 {
+	animation: animate 12s reverse infinite;
+}
+.main__particles.particles3 {
+	animation: animate2 13s linear infinite;
+}
+.main__particles.particles4 {
+	animation: animate2 14s linear infinite;
+}
+@keyframes animate 
+{
+	0% 
+	{
+		background-position: 0px 0px;
+	}
+	100%
+	{
+		background-position:  400px 400px;
+	}
+}
+@keyframes animate2 
+{
+	0% 
+	{
+		background-position: 50px 0px;
+	}
+	100%
+	{
+		background-position:  450px 0px;
+	}
+} */
+.main__img {
+  width: 40%;
+  position: relative;
+  filter: alpha(Opacity=70);
+  /* Полупрозрачность для IE */
+  opacity: 0.7;
+  /* Полупрозрачность для других браузеров */
+  /*filter: grayscale(100%); /* чб */
+  margin-left: 45%;
+}
+
+.main__img:hover {
+  filter: alpha(Opacity=100);
+  opacity: 1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  /*z-index: 20; /* выезжает на первый план */
+  /*width: 30%; /* увеличивается */
+}
+
+.main__title {
+  color: #000;
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 3em;
+  /*text-shadow: 1px 1px 2px black, 0 0 1em #FEFDFB;*/
+  /*text-shadow: 1px 1px 5px #FEFDFB;*/
+  /*color: transparent;
+   -webkit-text-stroke: 0.2px black;
+   -webkit-text-fill-color: transparent;*/
+}
+
+/* BTN */
+.btn-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  margin-top: 250px;
+}
+
+.btn {
+  width: 15px;
+  height: 15px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transition-property: -webkit-box-shadow;
+  transition-property: -webkit-box-shadow;
+  transition-property: box-shadow;
+  transition-property: box-shadow, -webkit-box-shadow;
+  -webkit-box-shadow: -2px 2px 0 #000;
+          box-shadow: -2px 2px 0 #000;
+  /* то, что и делает стрелку */
+  -webkit-transform: rotate(315deg);
+          transform: rotate(315deg);
+  -webkit-animation-name: myAnimation;
+          animation-name: myAnimation;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes myAnimation {
+  0% {
+    margin-top: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    margin-top: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes myAnimation {
+  0% {
+    margin-top: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    margin-top: 30px;
+    opacity: 1;
+  }
+}
+
+/*BTN END*/
+@media screen and (max-width: 1024px), screen and (max-height: 1000px) {
+  #empty {
+    height: 700px;
+  }
+  .block__half, .block__half-2 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px), screen and (max-height: 700px) {
+  .header__label {
+    position: fixed;
+    top: 11%;
+    left: 0;
+    margin-left: -20px;
+  }
+  .main__img {
+    width: 70%;
+    margin-left: 30%;
+  }
+  .main__title {
+    color: #000;
+    position: absolute;
+    top: 59.8%;
+    left: 10%;
+    font-size: 2.5em;
+  }
+  .block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-size: 17px;
+    margin: 0;
+    padding: 10px;
+  }
+  .block__half, .block__half-2 {
+    width: 80%;
+  }
+  .block__half_right, .block__half-2_right, .block__half_left, .block__half_left-2 {
+    border: none;
+    -o-border-image: none;
+       border-image: none;
+  }
+  #empty,
+  #empty2 {
+    display: none;
+  }
+  #work {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+/*# sourceMappingURL=style.css.map */

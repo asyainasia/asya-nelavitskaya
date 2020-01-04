@@ -1,0 +1,188 @@
+@import './varriables';
+@import './header';
+@import './content';
+@import './_footer';
+
+html {
+	scroll-behavior: smooth;
+}
+body {
+	height: 100vh;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: $raleway;
+}
+#cursor {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	// border: 2px solid $black;
+	background-color: $cursorColor;
+	box-sizing: border-box;
+	transition: 0.1s;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	// pointer-events: none;
+}
+.main {
+	@include flexCenter(column, center);
+
+	height: 100%;
+	background-color: $white;
+}
+
+/* .main__particles {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(file:///Users/buyer/Desktop/my-page/img/particles-1.png); /* можно добавит no-repeat 
+	filter: alpha(Opacity=20);
+    opacity: 0.2;
+}
+.main__particles.particles1 {
+	animation: animate 11s linear infinite;
+}
+.main__particles.particles2 {
+	animation: animate 12s reverse infinite;
+}
+.main__particles.particles3 {
+	animation: animate2 13s linear infinite;
+}
+.main__particles.particles4 {
+	animation: animate2 14s linear infinite;
+}
+@keyframes animate 
+{
+	0% 
+	{
+		background-position: 0px 0px;
+	}
+	100%
+	{
+		background-position:  400px 400px;
+	}
+}
+@keyframes animate2 
+{
+	0% 
+	{
+		background-position: 50px 0px;
+	}
+	100%
+	{
+		background-position:  450px 0px;
+	}
+} */
+.main__img {
+	width: 40%; // 30 для картинки
+	position: relative;
+	filter: alpha(Opacity=70); /* Полупрозрачность для IE */
+    opacity: 0.7; /* Полупрозрачность для других браузеров */ 
+	/*filter: grayscale(100%); /* чб */
+	margin-left: 45%; // 48 - для картинки
+	&:hover { 
+		filter: alpha(Opacity=100); 
+		opacity: 1;
+		transition: 0.5s;
+		/*z-index: 20; /* выезжает на первый план */
+		/*width: 30%; /* увеличивается */ 
+	}
+}
+.main__title {
+	color: #000;
+	position: absolute;
+	top: 50%;
+	left: 15%;
+	font-family: $monserrat;
+	font-size: 3em;
+	/*text-shadow: 1px 1px 2px black, 0 0 1em #FEFDFB;*/
+
+	/*text-shadow: 1px 1px 5px #FEFDFB;*/
+	/*color: transparent;
+   -webkit-text-stroke: 0.2px black;
+   -webkit-text-fill-color: transparent;*/
+
+}
+/* BTN */
+.btn-wrapper { 	
+	@include flexCenter(column, center);
+
+	position: absolute; 
+	margin-top: 250px;
+}
+.btn {
+	width: 15px;
+	height: 15px;
+	transition: .5s;
+	transition-property: box-shadow;
+	box-shadow: -2px 2px 0 #000; /* то, что и делает стрелку */
+	transform: rotate(315deg);
+	animation-name: myAnimation;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+@keyframes myAnimation {
+	0% {margin-top: 0; opacity: 0;}
+	50% {opacity: 1;}
+	100% {margin-top: 30px; opacity: 1;}	
+}
+/*BTN END*/
+
+@media screen and (max-width: 1024px), screen and (max-height: 1000px) {
+	#empty {
+		height: 700px;
+	}
+	.block__half {
+		width: 100%;
+	}
+}
+@media screen and (max-width: 800px), screen and (max-height: 700px) {
+	.header__label {
+		position: fixed;
+		top: 11%;
+		left: 0;
+		margin-left: -20px;
+	}
+	.main__img {
+		width: 70%; 
+		margin-left: 30%;
+	}
+	.main__title {
+		color: #000;
+		position: absolute;
+		top: 59.8%;
+		left: 10%;
+		font-size: 2.5em;
+	}
+	.block {
+		@include flexCenter(column, center);
+		flex-direction: column !important;
+		justify-content: center !important;
+	
+		font-size: 17px;
+		margin: 0;
+		padding: 10px;
+	}
+	.block__half {
+		width: 80%;
+	}
+	.block__half_right,
+	.block__half_left {
+		border: none  !important;
+		border-image: none !important;
+	}
+	#empty,
+	#empty2 {
+		display: none !important;
+	}
+	#work {
+		display: flex !important;
+		flex-direction: column-reverse !important;
+	}
+}

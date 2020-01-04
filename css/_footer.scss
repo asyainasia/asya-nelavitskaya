@@ -1,0 +1,22 @@
+.footer {
+    @include flexCenter(column, center);
+    // margin: 0;
+    padding: 30px;
+    background-color: $footerColor;
+    color: $white;
+    font-size: 11px;
+    font-family: $monserrat;
+    a {
+        color: $white;
+    }
+}
+.footer__icon-wrapper__icon {
+    padding: 10px;
+    height: 20px;
+    filter: invert(100);
+    cursor: pointer;
+    &:hover {
+        height: 25px;
+        transition: 0.5s;
+    }
+}

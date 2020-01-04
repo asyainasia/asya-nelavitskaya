@@ -1,0 +1,19 @@
+$white: #F8f8f8; /* #FAFAFA #FEFDFB */
+$black: #151515;
+$red: red;
+$cursorColor: rgb(241, 92, 92);
+$textColor: #747272;
+$lightGray: #c0c0c0;
+$backgroundDark: rgb(248, 194, 194);
+$footerColor: #151515;
+
+
+$monserrat: 'Montserrat', sans-serif;
+$raleway: 'Raleway', sans-serif;
+
+@mixin flexCenter($direction, $justify) {
+    display: flex;
+	align-items: center;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
